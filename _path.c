@@ -1,6 +1,4 @@
 #include "main.h"
-
-
 int _path(char *args, char **argv, char **env, int *stad_exit)
 {
 	int i;
