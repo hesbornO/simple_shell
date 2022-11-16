@@ -39,4 +39,5 @@ char **_parser(char *string)
 	args[i] = NULL;
 	free(linecopy);
 	return (args);
+	
 }
