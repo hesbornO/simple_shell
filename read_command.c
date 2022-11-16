@@ -32,5 +32,6 @@ char *read_command(char **env)
 		}
 	}
 	free(string);
+	
 	return (0);
 }
