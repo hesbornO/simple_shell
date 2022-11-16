@@ -1,6 +1,4 @@
 #include "main.h"
-
-
 void sighandler(int sig)
 {
 	int sig_command = 0;
