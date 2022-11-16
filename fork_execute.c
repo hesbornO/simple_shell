@@ -71,6 +71,7 @@ void print_count(int *count)
  * @c: the char passed to the function
  * Return: 0 success otherwise 1
  */
+
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
