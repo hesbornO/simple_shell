@@ -43,4 +43,5 @@ int func_ctrl_d(char *string, ssize_t read, int *stad_exit);
 /* function signal */
 void sighandler(int sig);
 
+
 #endif
