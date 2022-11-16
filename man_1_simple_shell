@@ -1,0 +1,65 @@
+.TH Shell 3 "17 agosto 2020" "1.0" "Simple Shell Manual"
+
+.SH NAME
+.B Simple Shell - a simple command interpreter in c
+
+.SH SYNOPSIS
+Simple shell [command] [file]
+
+.SH DESCRIPTION
+The simple shell interprets user commands, which are either directly entered by the user, ro which can be read from a file called the shell script or shell program. The shell reads commands from the script line per line and searches for those commands on the system, while a compiler converts a program into machine readable form, an executable file - which may then be used in a shell script
+the program runs based on bash commands obtained form the input stream by the user. Any text seperated by a single space is considered to be an argument. The respective command typed by the user is then executed as if in a UNIX shell.
+
+A command is a sequence of non blank words separated by a blank space. The first word specifies the name of the command to be executed and subsequent arguments are considered to be flags associated with the command.
+
+Lines on shell can be read interactively from standard output. It can also, be read non-interactively where you can pipe in the file. It is designed so it can act like Bash. It does not however, handle certain bash features such as options.
+
+.SH ARGUMENTS
+From input, the first argument is assumed to be an executable command file. It follows the parameters taken by that particular command.
+
+.B hsh
+is the executable that will interpret the command. It executes it and then, exit. With exit, an exit status returns with the status of the previous command executed. For instance, status is 0 on non-execution.
+
+.SH INTEREACTIVE MODE EXAMPLE
+.PP
+$ ./hsh
+.br
+shell$ /bin/ls
+.br
+hsh main.c shell.c
+.br
+shell$ exit
+.br
+$
+.br
+.PP
+.PP
+.SH NON-INTERACTIVE MODE EXAMPLE
+.PP
+$ echo "/bin/ls" | . /hsh
+.br
+hsh main.c shell.c
+.br
+
+.SH ENVIRONMENT
+When the simple shell is invoked, it is given an array of strings called the enviroment. Note that string is a copy. The strings are environment variables and are represented in this format
+.B name=value
+
+.SH BUILTIN COMMANDS
+The following commands below are called and handled directly in the shell. Therefore, these commands do not need to call upon a child process to be executed. However, with the exit builtin it returns an exits status of 0 on successful execution. In failure, the exti will return 0 when the command invoked can no execute. also, it will return 1 when the command is not found. It will return a value of 2 in failure misuse of the shell builtin
+.br
+the following commands are executed in the shell as builtins
+
+.TP
+.B exit
+- Exits the shell
+
+.TP
+.B env
+- Prints the variables from the current enviroment
+
+.SH BUGS
+No known bugs
+
+.SH AUTHORS
+.B Sofia Garcia, Cristhian Carbonell
