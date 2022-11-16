@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 int printenv(char **env, int *stad_exit)
 {
 	unsigned int i;
